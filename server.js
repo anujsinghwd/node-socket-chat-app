@@ -3,11 +3,11 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/test.html');
 });
 
 io.on('connection', function(socket){
-    
+    console.log(socket.username);    
     // Default UserName
     socket.username = 'Anonymous';
 
